@@ -60,16 +60,12 @@
           });
           if (wrong) {
             alertify.error('Wrong answer :(');
-          } else {
-            alertify.success('Correct answer!');
-          }
-
-          ask.isAsking = false;
-          if (wrong) {
             d.reject();
           } else {
+            alertify.success('Correct answer!');
             d.resolve(true);
           }
+          ask.isAsking = false;
         }
       }
     };
